@@ -1,0 +1,46 @@
+<div class="register-container">
+  <div class="register-content">
+    <mat-toolbar class="register-toolbar" color="primary">Register</mat-toolbar>
+    <mat-card>
+      <div *ngIf="successMessage">{{ successMessage }}</div>
+      <div *ngIf="errorMessage">{{ errorMessage }}</div>
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <mat-form-field appearance="outline">
+          <mat-label>Firstname</mat-label>
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <input autofocus type="text" matInput placeholder="Firstname" formControlName="firstName">
+          <mat-error *ngIf="checkValidation('firstName')">
+            {{ fieldRequired }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Lastname</mat-label>
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <input type="text" matInput placeholder="Lastname" formControlName="lastName">
+          <mat-error *ngIf="checkValidation('lastName')">
+            {{ fieldRequired }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <mat-icon matPrefix>email</mat-icon>
+          <input autofocus type="email" matInput placeholder="Ex. jeandupont@boatapp.com" formControlName="email">
+          <mat-error *ngIf="checkValidation('email')">
+            {{ emailErrors() }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
+          <mat-error *ngIf="checkValidation('password')">
+            {{ getErrorPassword() }}
+          </mat-error>
+        </mat-form-field>
+
+        <button [disabled]="!registerForm.valid" class="submit-button" type="submit" mat-raised-button color="primary">Submit</button>
+      </form>
+    </mat-card>
+  </div>
+</div>
+
