@@ -11,12 +11,16 @@ import {NavbarComponent} from "./navbar/navbar.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import { FullnamePipe } from './shared/pipes/fullname/fullname.pipe';
+import {MatIconModule} from "@angular/material/icon";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FullnamePipe
+    FullnamePipe,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,9 @@ import { FullnamePipe } from './shared/pipes/fullname/fullname.pipe';
     UserModule,
     BoatModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

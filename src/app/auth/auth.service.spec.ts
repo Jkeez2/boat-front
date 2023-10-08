@@ -1,9 +1,10 @@
-import {TestBed, tick} from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
 import { AuthService } from './auth.service';
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
 import {User} from "../user/user.model";
 import {Router} from "@angular/router";
+import {UserRegister} from "../user/user-register.model";
 
 describe('AuthService', () => {
   let service: AuthService;
@@ -25,7 +26,7 @@ describe('AuthService', () => {
   });
 
   it('should register new user', () => {
-    let user: User = {id: 0, firstName: "Jeanne", lastName: "Trope", email: "jeannetrop@test.com", password: "secretpassworD1"};
+    let user: UserRegister = {firstName: "Jeanne", lastName: "Trope", email: "jeannetrop@test.com", password: "secretpassworD1"};
     let newUser: User | undefined;
 
     service.register(user).subscribe(
@@ -38,7 +39,10 @@ describe('AuthService', () => {
     request.flush(user);
     controller.verify();
 
-    expect(newUser).toEqual(user);
+    expect(newUser?.firstName).toEqual(user.firstName);
+    expect(newUser?.lastName).toEqual(user.lastName);
+    expect(newUser?.email).toEqual(user.email);
+    expect(newUser?.password).toEqual(user.password);
   });
 
   it('should logout and redirect to home', () => {

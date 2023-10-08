@@ -1,0 +1,13 @@
+.boat-details-container {
+  margin-top: 50px;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+}
+
+.boat-details-content {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}

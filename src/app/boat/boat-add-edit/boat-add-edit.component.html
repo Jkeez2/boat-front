@@ -1,0 +1,26 @@
+<a routerLink="/boats">
+  <button mat-button matTooltip="Go back" aria-label="Back button">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</a>
+<div class="add-edit-container">
+  <div class="add-edit-content">
+    <mat-toolbar class="add-edit-toolbar" color="primary">{{userAction}}</mat-toolbar>
+    <mat-card>
+      <form [formGroup]="boatForm" (ngSubmit)="submit()">
+        <mat-form-field appearance="outline">
+          <mat-label>Boat's name</mat-label>
+          <mat-icon matPrefix>badge</mat-icon>
+          <input autofocus type="text" matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Boat's description</mat-label>
+          <mat-icon matPrefix>description</mat-icon>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+        <button [disabled]="!boatForm.valid" class="submit-button" type="submit" mat-raised-button color="primary">Submit</button>
+      </form>
+    </mat-card>
+  </div>
+</div>
+
