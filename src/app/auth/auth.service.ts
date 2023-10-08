@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
-import {UserLogin} from "../user/userLogin.model";
+import {UserLogin} from "../user/user-login.model";
 import {Observable} from "rxjs";
 import {User} from "../user/user.model";
 
@@ -15,11 +15,11 @@ export class AuthService {
   constructor(private router: Router, private http: HttpClient) { }
 
   login(credentials: UserLogin): Observable<User> {
-    return this.http.post<User>(`${this.apiUrl}/api/users/login`, credentials);
+    return this.http.post<User>(`${this.apiUrl}/api/auth/login`, credentials);
   }
 
   register(user: User): Observable<User> {
-    return this.http.post<User>(`${this.apiUrl}/api/users/register`, user);
+    return this.http.post<User>(`${this.apiUrl}/api/auth/register`, user);
   }
 
   isAunthenticated(): boolean {

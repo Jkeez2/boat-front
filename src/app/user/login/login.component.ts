@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {UserService} from "../user.service";
 import {Router} from "@angular/router";
 import {FormBuilder, Validators} from "@angular/forms";
-import {UserLogin} from "../userLogin.model";
+import {UserLogin} from "../user-login.model";
 import {AuthService} from "../../auth/auth.service";
 import {catchError, Observable, tap, throwError} from "rxjs";
 import {User} from "../user.model";
