@@ -1,0 +1,19 @@
+<a routerLink="/boats">
+  <button mat-button matTooltip="Go back" aria-label="Back button">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</a>
+<div class="boat-details-container">
+  <div class="boat-details-content">
+    <mat-card *ngIf="boat" >
+      <mat-card-header>
+        <mat-card-title>{{boat.name}}</mat-card-title>
+        <mat-card-subtitle>Boat with ID {{boat.id}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{boat.description}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>

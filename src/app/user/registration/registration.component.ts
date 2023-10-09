@@ -4,6 +4,7 @@ import {UserService} from "../user.service";
 import {catchError, Observable, tap, throwError} from "rxjs";
 import {AbstractControl, FormBuilder, Validators} from "@angular/forms";
 import {AuthService} from "../../auth/auth.service";
+import {UserRegister} from "../user-register.model";
 
 @Component({
   selector: 'app-registration',
@@ -11,8 +12,7 @@ import {AuthService} from "../../auth/auth.service";
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
-  user: User = {
-    id: 0,
+  user: UserRegister = {
     firstName: '',
     lastName: '',
     email: '',

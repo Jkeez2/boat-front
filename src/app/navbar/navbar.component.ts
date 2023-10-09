@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {AuthService} from "../auth/auth.service";
 import {UserService} from "../user/user.service";
 import {User} from "../user/user.model";
+import {first, share, shareReplay, take, takeUntil, takeWhile} from "rxjs";
 
 @Component({
   selector: 'app-navbar',
@@ -14,20 +15,8 @@ export class NavbarComponent {
   constructor(private auth: AuthService, private userService: UserService) {}
 
   isAuthenticated(){
-    if (this.auth.isAunthenticated()) {
-      this.setAuthenticatedUser();
-      return true;
-    }
-    return false;
-  }
+    return this.auth.isAuthenticated();
 
-  setAuthenticatedUser() {
-    let userId = localStorage.getItem('currentUser');
-    if (!this.currentUser) {
-      this.userService.getCurrentUser(Number(userId)).subscribe((user) => {
-        this.currentUser = user;
-      });
-    }
   }
 
   logout() {

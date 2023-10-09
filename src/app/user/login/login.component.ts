@@ -31,8 +31,8 @@ export class LoginComponent {
         catchError(this.handleError<User>(`Login`))
       )
       .subscribe((user) => {
-      localStorage.setItem('currentUser', JSON.stringify(user.id));
-      this.router.navigate(['/boat-list']);
+        localStorage.setItem('currentUser', JSON.stringify(user.id));
+        this.router.navigate(['/boats']);
     });
   }
 
