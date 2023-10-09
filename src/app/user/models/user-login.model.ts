@@ -1,3 +1,6 @@
+/**
+ * Class used to represents the user's credentials when he logs in
+ */
 export class UserLogin {
   email: string;
   password: string;
