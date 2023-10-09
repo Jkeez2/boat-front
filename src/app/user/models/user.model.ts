@@ -1,5 +1,8 @@
-import {Boat} from "../boat/boat.model";
+import {Boat} from "../../boat/models/boat.model";
 
+/**
+ * Interface that represents a User.
+ */
 export interface User {
   id: number;
   firstName: string;

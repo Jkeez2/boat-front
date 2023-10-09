@@ -1,5 +1,5 @@
 import { FullnamePipe } from './fullname.pipe';
-import {User} from "../../../user/user.model";
+import {User} from "../../../user/models/user.model";
 
 describe('FullnamePipe', () => {
   it('create an instance', () => {

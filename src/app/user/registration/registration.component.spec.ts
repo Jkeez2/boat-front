@@ -1,14 +1,11 @@
-import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import { RegistrationComponent } from './registration.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from "../../auth/auth.service";
-import {UserLogin} from "../user-login.model";
-import {Observable, of} from "rxjs";
-import {User} from "../user.model";
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {UserModule} from "../user.module";
-import {findEl} from "../../shared/helpers/form-helper";
+import {findEl} from "../../shared/helpers/test-helper";
 
 describe('RegistrationComponent', () => {
   let component: RegistrationComponent;

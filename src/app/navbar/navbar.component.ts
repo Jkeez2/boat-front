@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import {AuthService} from "../auth/auth.service";
-import {UserService} from "../user/user.service";
-import {User} from "../user/user.model";
-import {first, share, shareReplay, take, takeUntil, takeWhile} from "rxjs";
+import {User} from "../user/models/user.model";
 
+/**
+ * This is the App's navbar, which checks for authentication in order to display login,
+ * register and logout buttons when necessary.
+ */
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -12,13 +14,19 @@ import {first, share, shareReplay, take, takeUntil, takeWhile} from "rxjs";
 export class NavbarComponent {
 
   currentUser: User | null;
-  constructor(private auth: AuthService, private userService: UserService) {}
+  constructor(private auth: AuthService) {}
 
+  /**
+   * This method checks if user is authenticated.
+   */
   isAuthenticated(){
     return this.auth.isAuthenticated();
 
   }
 
+  /**
+   * Call the logout method.
+   */
   logout() {
     this.auth.logout();
     this.currentUser = null;

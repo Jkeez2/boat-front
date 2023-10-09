@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {UserService} from "../../user/user.service";
 import {ActivatedRoute} from "@angular/router";
-import {Boat} from "../boat.model";
+import {Boat} from "../models/boat.model";
 
 /**
  * This component simply display a boat's details using a mat-card.
@@ -18,7 +18,7 @@ export class BoatDetailsComponent {
   }
 
   /**
-   * Initialise component by fetching boat
+   * Initialize component by fetching boat
    */
   ngOnInit() {
     let userId = Number(localStorage.getItem('currentUser'));

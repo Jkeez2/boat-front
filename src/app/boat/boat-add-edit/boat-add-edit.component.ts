@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {UserService} from "../../user/user.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Boat} from "../boat.model";
+import {Boat} from "../models/boat.model";
 import {UserActions} from "../../shared/enums/user-actions"
 
 /**
@@ -53,7 +53,7 @@ export class BoatAddEditComponent {
   }
 
   /**
-   * Submit a boat for and update or a creation.
+   * Submit a boat for an update or a creation.
    */
   submit() {
     // Retrieve form values to build a boat object

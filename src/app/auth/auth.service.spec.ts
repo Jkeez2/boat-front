@@ -2,9 +2,9 @@ import {TestBed} from '@angular/core/testing';
 
 import { AuthService } from './auth.service';
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
-import {User} from "../user/user.model";
+import {User} from "../user/models/user.model";
 import {Router} from "@angular/router";
-import {UserRegister} from "../user/user-register.model";
+import {UserRegister} from "../user/models/user-register.model";
 
 describe('AuthService', () => {
   let service: AuthService;

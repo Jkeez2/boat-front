@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
-import {UserLogin} from "../user/user-login.model";
+import {UserLogin} from "../user/models/user-login.model";
 import {Observable} from "rxjs";
-import {User} from "../user/user.model";
-import {UserRegister} from "../user/user-register.model";
+import {User} from "../user/models/user.model";
+import {UserRegister} from "../user/models/user-register.model";
 
 /**
  * This service is used to register new user accounts, login users,
