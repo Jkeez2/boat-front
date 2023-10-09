@@ -1,6 +1,25 @@
 # BoatFront
 
+This project is designed to allow a user to manage its boats, using a REST API.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+
+## TODO
+
+### Resolver
+At the moment, it's possible for a user to modify URL and make incorrect requests to the API.
+A resolver is in place to fetch data before accessing the route, to check validity of the request, 
+this is partially working so it is not used in the routing.
+
+### Restarting the API
+
+When restarting the API, data are cleared in the database. However, the front still keep 
+the user's id that was stored before, so we have to logout in the interface to
+go back to a normal state.
+
+### Authentication
+
+At the moment, we store user's id in local storage to simulate an authentication.
 
 ## Development server
 
